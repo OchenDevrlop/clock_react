@@ -23,6 +23,12 @@ function Clock() {
       document.title = time[0][0].concat(time[0][1], " : ", time[1][0], time[1][1], " : ", time[2][0], time[2][1]);
     })
 
+    React.useEffect(() => {
+      setTime(
+        new Date().toTimeString().split(":")
+      );
+    }, [])
+
     setInterval(() => {
       setTime(
         new Date().toTimeString().split(":")
